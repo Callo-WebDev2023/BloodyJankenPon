@@ -4,32 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet">
-<!--     <link rel="stylesheet" href="./fontawesome.min.css">
-    <link rel="stylesheet" href="./all.min.css">
-    <link rel="stylesheet" href="./main.css"> -->
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <header class="header-box">
-        <p class="header">Welcome to Rock - Paper - Scissors Game!!!</p>
+    <header class="header-box"> 
+        <p class="header">GAME: ROCK, PAPER, AND SCISSORS</p>
     </header>
     <main class="main clearfix">
-        <button class="btn-new"><i class="Newgame"></i> New game</button>
-        <div class="header">Score Board</div>
+        <div class="result">
+            <p id="text-result">Result</p>
+        </div>
+        
         <div class="player-name">
-            <p class="name">You</p>
-            <p class="name">Computer</p>
+            <p class="players">You</p>
+            <p class="players">Computer</p>
         </div>
         <div class="scores">
-            <div class="score-0">2</div>
-            <div class="score-1">3</div>
+            <div class="playerscore">2</div>
+            <div class="computerscore">3</div>
         </div>
-        <div class="result">
-                <p id="result_text">Result</p>
-            </div>
+
         <div class="moves">
             <div class="move-0">
-                <div class="header">Your Move</div>
+                <div class="header-name">PLAYER</div>
                 <div class="choice">
                     <img src="img/rock.jpeg" alt="Rock" class="image" id="rock" > 
                     <img src="img/paper.jpeg" alt="Paper" class="image" id="paper">
@@ -37,13 +34,21 @@
                 </div>
             </div>
             <div class="move-1">
-                <div class="header">Computer</div>
-                <img src="img/scissors.jpeg" alt="" id="imageComp">
+                <div class="header-name">COMPUTER</div>
+                <img src="img/scissors.jpeg" alt="" id="computer-answer">
             </div>
         </div>
+        <div class="btn-newgame">
+        <img src="img/bloodynewgamebutton.png" alt="Newgame"><i class="Newgame"></i>
+        </div>
+
     </main>
 
 
     <script src="./app.js"></script>
 </body>
 </html>
+
+<div class="menu-btn">
+
+</div>

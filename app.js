@@ -6,41 +6,44 @@ let compScore = 0;
 const choices = [rock, paper, scissors]; 
 
 
-const _img = document.getElementsByClassName('image'); 
-const _r = document.getElementById('rock');
-const _p = document.getElementById('paper'); 
-const _s = document.getElementById('scissors'); 
-const _imgComp = document.querySelector('#imageComp'); 
+const choicesimages = document.getElementsByClassName('image'); 
+const chosenrock = document.getElementById('rock');
+const chosenpaper = document.getElementById('paper');
+const chosenscissor = document.getElementById('scissors'); 
+const choicesimagesComp = document.querySelector('#computer-answer'); 
 const _resPanel = document.querySelector('.result'); 
-const _resText = document.querySelector('#result_text'); 
-const _yourScore = document.querySelector('.score-0'); 
-const _compScore = document.querySelector('.score-1'); 
-const _btnNew = document.querySelector('.btn-new'); 
+const result_of_match = document.querySelector('#text-result'); 
+const _yourScore = document.querySelector('.playerscore'); 
+const _compScore = document.querySelector('.computerscore'); 
+const newgame = document.querySelector('.btn-newgame');
+
 
 
 
 init();
 
 
-_r.addEventListener('click', function(){
+chosenrock.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('r'); 
+    gamePlay('ROCK'); 
 });
 
-_p.addEventListener('click', function(){
+chosenpaper.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('p'); 
+    gamePlay('PAPER'); 
 });
 
-_s.addEventListener('click', function(){
+chosenscissor.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('s'); 
+    gamePlay('SCISSOR'); 
 });
 
-_btnNew.addEventListener('click', init); 
+
+
+newgame.addEventListener('click', init); 
 
 function init(){
-    _imgComp.style.display = 'none';
+    choicesimagesComp.style.display = 'none';
     _resPanel.style.visibility = 'hidden';  
     yourScore = 0;
     compScore = 0; 
@@ -48,32 +51,33 @@ function init(){
     _compScore.textContent = '0'; 
 }
 
+
 function getCompChoice(){
-    _imgComp.style.display = 'inline-block'; 
+    choicesimagesComp.style.display = 'inline-block'; 
     const randNum = Math.floor(Math.random() * 3); 
-    const choices_short = ['r', 'p', 's']; 
-    _imgComp.src = choices[randNum];
+    const choices_short = ['ROCK', 'PAPER', 'SCISSOR']; 
+    choicesimagesComp.src = choices[randNum];
     return choices_short[randNum]; 
 }
 
 function gamePlay(choice){
     const compChoice = getCompChoice();
     switch (choice + compChoice){
-        case 'rp':
-        case 'ps':
-        case 'sr':
+        case 'ROCKPAPER':
+        case 'PAPERSCISSOR':
+        case 'SCISSORROCK':
             losing();
             break;
 
-        case 'rs':
-        case 'pr':
-        case 'sp':
+        case 'ROCKSCISSOR':
+        case 'PAPERROCK':
+        case 'SCISSORPAPER':
             winning();
             break; 
 
         default:
             _resPanel.style.display = 'block'; 
-            _resText.textContent = 'Tie!'; 
+            result_of_match.textContent = 'DRAW!'; 
             
     }
 
@@ -81,17 +85,16 @@ function gamePlay(choice){
 
 function losing(){
     _resPanel.style.visibility = 'visible'; 
-    _resText.textContent = 'you loose!'; 
+    result_of_match.textContent = 'you loose!'; 
     compScore ++;
     _compScore.textContent = compScore; 
 }
 
 function winning(){
     _resPanel.style.visibility = 'visible'; 
-    _resText.textContent = 'you win!'; 
+    result_of_match.textContent = 'you win!'; 
     yourScore++;
     _yourScore.textContent = yourScore; 
 }
-
 
 

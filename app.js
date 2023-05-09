@@ -1,31 +1,40 @@
-
-
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissor = document.getElementById("scissor");
-
+const rock = 'img/blrock.png';
+const paper = 'img/blpaper.png';
+const scissors = 'img/blscissors.png';
 let yourScore = 0;
 let compScore = 0; 
-const choices = [rock, paper, scissors];
+const choices = [rock, paper, scissors]; 
 
-const result = document.querySelector(".result");
+
+const _img = document.getElementsByClassName('image'); 
+const _r = document.getElementById('rock');
+const _p = document.getElementById('paper'); 
+const _s = document.getElementById('scissors'); 
+const _imgComp = document.querySelector('#imageComp'); 
+const _resPanel = document.querySelector('.result'); 
+const _resText = document.querySelector('#result_text'); 
+const _yourScore = document.querySelector('.score-0'); 
+const _compScore = document.querySelector('.score-1'); 
+const _btnNew = document.querySelector('.btn-new'); 
+
+
 
 init();
 
 
-rock.addEventListener('click', function(){
+_r.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('rockchoice'); 
+    gamePlay('r'); 
 });
 
-paper.addEventListener('click', function(){
+_p.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('paperchoice'); 
+    gamePlay('p'); 
 });
 
-scissor.addEventListener('click', function(){
+_s.addEventListener('click', function(){
     getCompChoice();
-    gamePlay('scissorchoice'); 
+    gamePlay('s'); 
 });
 
 _btnNew.addEventListener('click', init); 
@@ -42,7 +51,7 @@ function init(){
 function getCompChoice(){
     _imgComp.style.display = 'inline-block'; 
     const randNum = Math.floor(Math.random() * 3); 
-    const choices_short = ['rockchoice', 'paperchoice', 'scissorchoice']; 
+    const choices_short = ['r', 'p', 's']; 
     _imgComp.src = choices[randNum];
     return choices_short[randNum]; 
 }
@@ -50,15 +59,15 @@ function getCompChoice(){
 function gamePlay(choice){
     const compChoice = getCompChoice();
     switch (choice + compChoice){
-        case 'rockchoicepaperchoice':
-        case 'paperchoicescissorchoice':
-        case 'scissorchoicerockchoice':
+        case 'rp':
+        case 'ps':
+        case 'sr':
             losing();
             break;
 
-        case 'rockchoicescissorchoice':
-        case 'paperchoicerockchoice':
-        case 'scissorchoicepaperchoice':
+        case 'rs':
+        case 'pr':
+        case 'sp':
             winning();
             break; 
 
@@ -67,6 +76,7 @@ function gamePlay(choice){
             _resText.textContent = 'Tie!'; 
             
     }
+
 }
 
 function losing(){
@@ -82,3 +92,6 @@ function winning(){
     yourScore++;
     _yourScore.textContent = yourScore; 
 }
+
+
+

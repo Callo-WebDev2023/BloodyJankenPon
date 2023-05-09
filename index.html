@@ -1,36 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type= "text/css" href="style.css">
-    <title>ROCK, PAPER, SCISSOR</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+<!--     <link rel="stylesheet" href="./fontawesome.min.css">
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./main.css"> -->
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="main-container">
-    <h1>ROCK, PAPER, SCISSOR GAME:<br>GAME OF THE CENTURY</h1>
-
-    <div class="playernames">
-        <p class="players">Your Score</p>
-        <p class="players">Computer Score</p>
-    </div>
-    <div class="scoreboard">
-        <div class="player-score"></p>
-        <div class="computer-score"></p>
-    </div>
-    <div class="result">
-        <p class="match-result">RESULT:</p>
-    </div>
-
-    <div class="button-container">
-        <button class="rock">CHOOSE: "ROCK"</button>
-        <button class="paper">CHOOSE: "PAPER"</button>
-        <button class="scissor">CHOOSE: "SCISSOR"</button>
+    <header class="header-box">
+        <p class="header">Welcome to Rock - Paper - Scissors Game!!!</p>
+    </header>
+    <main class="main clearfix">
+        <button class="btn-new"><i class="Newgame"></i> New game</button>
+        <div class="header">Score Board</div>
+        <div class="player-name">
+            <p class="name">You</p>
+            <p class="name">Computer</p>
         </div>
-</div>
+        <div class="scores">
+            <div class="score-0">2</div>
+            <div class="score-1">3</div>
+        </div>
+        <div class="result">
+                <p id="result_text">Result</p>
+            </div>
+        <div class="moves">
+            <div class="move-0">
+                <div class="header">Your Move</div>
+                <div class="choice">
+                    <img src="img/rock.jpeg" alt="Rock" class="image" id="rock" > 
+                    <img src="img/paper.jpeg" alt="Paper" class="image" id="paper">
+                    <img src="img/scissors.jpeg" alt="Scissors" class="image" id="scissors">
+                </div>
+            </div>
+            <div class="move-1">
+                <div class="header">Computer</div>
+                <img src="img/scissors.jpeg" alt="" id="imageComp">
+            </div>
+        </div>
+    </main>
 
-    <script src="app.js"></script>
+
+    <script src="./app.js"></script>
 </body>
 </html>

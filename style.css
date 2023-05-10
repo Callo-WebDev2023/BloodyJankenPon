@@ -59,6 +59,8 @@ img{
     height: 400px;
     width: 250px;
 }
+.btn-newgame img{width: 200px;
+    height:50px;}
 
 .main{
     text-align: center;
